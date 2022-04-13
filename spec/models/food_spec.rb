@@ -1,7 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  it 'is valid with a name and a description' do
+  it 'is valid with a name, a description and category_id' do
+    food = Food.new(
+      name: 'Nasi Uduk',
+      description: 'Betawi style steamed rice cooked in coconut milk. Delicious!',
+      price: 15000.0,
+      category_id: "1"
+    )
+
+    expect(food).to be_valid
+  end
+
+  it 'is valid without a category_id' do
     food = Food.new(
       name: 'Nasi Uduk',
       description: 'Betawi style steamed rice cooked in coconut milk. Delicious!',
