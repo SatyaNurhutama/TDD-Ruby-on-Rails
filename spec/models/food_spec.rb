@@ -16,7 +16,8 @@ RSpec.describe Food, type: :model do
     food = Food.new(
       name: 'Nasi Uduk',
       description: 'Betawi style steamed rice cooked in coconut milk. Delicious!',
-      price: 15000.0
+      price: 15000.0,
+      category_id: nil
     )
 
     expect(food).to be_valid
@@ -26,7 +27,8 @@ RSpec.describe Food, type: :model do
     food = Food.new(
       name: nil,
       description: 'Betawi style steamed rice cooked in coconut milk. Delicious!',
-      price: 15000.0
+      price: 15000.0,
+      category_id: "1"
     )
 
     food.valid?
